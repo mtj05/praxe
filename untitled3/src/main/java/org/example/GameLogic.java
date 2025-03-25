@@ -16,7 +16,7 @@ public class GameLogic {
         enemies = new ArrayList<>();
         coin = new ArrayList<>();
         Enemy enemy1 = new Enemy(150,40,"monster.png");
-       
+
 
 
         Coin coin1 = new Coin(150, 150,"coin.png");
@@ -24,9 +24,9 @@ public class GameLogic {
         Coin coin3 = new Coin(600, 450,"coin.png");
         Coin coin4 = new Coin(200, 200,"coin.png");
         Coin coin5 = new Coin(350, 350,"coin.png");
-        Coin coin6 = new Coin(500, 500,"coin.png");
+        Coin coin6 = new Coin(500, 700,"coin.png");
         Coin coin7 = new Coin(700, 250,"coin.png");
-        Coin coin8 = new Coin(400, 100,"coin.png");
+        Coin coin8 = new Coin(400, 900,"coin.png");
         coin.add(coin1);
         coin.add(coin2);
         coin.add(coin3);
@@ -65,9 +65,32 @@ public class GameLogic {
                 }
             }
         }
+
+
+        checkCollisions();
     }
 
 
+    public void checkCollisions() {
+
+
+        // Remove coins if player collides with them
+        coin.removeIf(c -> ball.getEntityRectangle().intersects(c.getEntityRectangle()));
+
+
+
+
+        for (Enemy enemy : enemies) {
+            if (ball.getEntityRectangle().intersects(enemy.getEntityRectangle())) {
+                System.out.println(":P");
+
+            }
+
+
+
+
+
+        }
+
+    }
 }
-
-

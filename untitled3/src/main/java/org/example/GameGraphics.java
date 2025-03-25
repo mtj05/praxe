@@ -30,7 +30,7 @@ public class GameGraphics extends JFrame {
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             drawWall(g);
-            drawMap1(g);
+            //drawMap1(g);
 
             for (Coin coin : logic.coin) {
                 g.drawImage(coin.image, coin.coord.x, coin.coord.y, null);
@@ -39,8 +39,6 @@ public class GameGraphics extends JFrame {
             // Player 1
             g.drawImage(logic.ball.image, logic.ball.coord.x, logic.ball.coord.y, null);
 
-            // Player 2
-           //g.drawImage(logic.ball2.image, logic.ball2.coord.x, logic.ball2.coord.y, null);
 
             for (Enemy enemy : logic.enemies) {
                 g.drawImage(enemy.image, enemy.coord.x, enemy.coord.y, null);
@@ -59,34 +57,40 @@ public class GameGraphics extends JFrame {
             g.fillRect(getWidth() - 15, 0, 15, getHeight());
             //g.drawImage()
         }
+
+        /*
         private void drawMap1(Graphics g) {
-            g.setColor(Color.black);
-            int thickness = 10;
+        g.setColor(Color.BLACK);
+        int thickness = 10;
 
-            g.fillRect(100, 100, 300, thickness);
-            g.fillRect(600, 100, 300, thickness);
-            g.fillRect(250, 200, 500, thickness);
-            g.fillRect(100, 300, 200, thickness);
-            g.fillRect(700, 300, 200, thickness);
-            g.fillRect(250, 400, 500, thickness);
-            g.fillRect(100, 500, 300, thickness);
-            g.fillRect(600, 500, 300, thickness);
-            g.fillRect(250, 600, 500, thickness);
+        Horizontal walls (x, y, width, thickness)
+        g.fillRect(150, 150, 500, thickness);     // Top left horizontal wall
+        g.fillRect(1000, 150, 500, thickness);      // Top right horizontal wall
+        g.fillRect(400, 250, 800, thickness);       // Top middle horizontal wall
+        g.fillRect(150, 350, 300, thickness);       // Left upper horizontal wall
+        g.fillRect(1200, 350, 300, thickness);      // Right upper horizontal wall
+        g.fillRect(400, 450, 800, thickness);       // Center horizontal wall
+        g.fillRect(150, 550, 500, thickness);       // Bottom left horizontal wall
+        g.fillRect(900, 550, 500, thickness);       // Bottom right horizontal wall
+        g.fillRect(400, 650, 800, thickness);       // Bottom horizontal wall
 
+        // Vertical walls (x, y, thickness, height)
+        g.fillRect(250, 200, thickness, 150);       // Left vertical wall
+        g.fillRect(1500, 200, thickness, 150);      // Right vertical wall
+        g.fillRect(550, 300, thickness, 150);       // Upper left vertical wall
+        g.fillRect(750, 300, thickness, 150);       // Upper right vertical wall
+        g.fillRect(250, 450, thickness, 150);       // Middle left vertical wall
+        g.fillRect(1500, 450, thickness, 150);      // Middle right vertical wall
+        g.fillRect(550, 550, thickness, 150);       // Lower left vertical wall
+        g.fillRect(750, 550, thickness, 150);       // Lower right vertical wall
 
-            g.fillRect(200, 150, thickness, 100);
-            g.fillRect(800, 150, thickness, 100);
-            g.fillRect(400, 250, thickness, 100);
-            g.fillRect(600, 250, thickness, 100);
-            g.fillRect(200, 350, thickness, 100);
-            g.fillRect(800, 350, thickness, 100);
-            g.fillRect(400, 450, thickness, 100);
-            g.fillRect(600, 450, thickness, 100);
+        // Additional wall segments (for more variation)
+        g.fillRect(50, 400, 100, thickness);        // Extra left segment
+        g.fillRect(1700, 400, 100, thickness);       // Extra right segment
+    }
 
-            g.fillRect(0, 350, 75, thickness);
-            g.fillRect(950, 350, 75, thickness);
+         */
 
-        }
 }
 
 

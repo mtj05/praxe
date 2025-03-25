@@ -7,7 +7,6 @@ public class Game {
     GameLogic logic;
 
     boolean w, s, a, d;
-    boolean up, down, left, right;
 
     public Game() {
         logic = new GameLogic();
@@ -22,10 +21,7 @@ public class Game {
                     case KeyEvent.VK_S -> s = true;
                     case KeyEvent.VK_A -> a = true;
                     case KeyEvent.VK_D -> d = true;
-                    case KeyEvent.VK_UP -> up = true;
-                    case KeyEvent.VK_DOWN -> down = true;
-                    case KeyEvent.VK_LEFT -> left = true;
-                    case KeyEvent.VK_RIGHT -> right = true;
+
                 }
             }
 
@@ -36,10 +32,6 @@ public class Game {
                     case KeyEvent.VK_S -> s = false;
                     case KeyEvent.VK_A -> a = false;
                     case KeyEvent.VK_D -> d = false;
-                    case KeyEvent.VK_UP -> up = false;
-                    case KeyEvent.VK_DOWN -> down = false;
-                    case KeyEvent.VK_LEFT -> left = false;
-                    case KeyEvent.VK_RIGHT -> right = false;
                 }
             }
         });
@@ -50,14 +42,8 @@ public class Game {
             if (s) logic.ball.coord.y += moveDistance;
             if (a) logic.ball.coord.x -= moveDistance;
             if (d) logic.ball.coord.x += moveDistance;
-            /*
-            if (up) logic.ball2.coord.y -= moveDistance;
-            if (down) logic.ball2.coord.y += moveDistance;
-            if (left) logic.ball2.coord.x -= moveDistance;
-            if (right) logic.ball2.coord.x += moveDistance;
 
 
-            */
             graphics.render(logic);
         });
         timer.start();
